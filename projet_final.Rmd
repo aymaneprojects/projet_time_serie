@@ -17,7 +17,7 @@ output: html_document
 
 ```{r}
 library(readr)
-setwd("C:/Users/33670/Documents/M2 semestre 9/Time series/Projet_Final")
+setwd("data")
 indiceDesPrix_WE <- read_csv("IDP_WE_TRI.csv")
 indiceDesPrix_WE[[1]] <- as.Date(indiceDesPrix_WE[[1]], format = "%Y-%m-%d")
 indiceDesPrix_WE[[2]] <- as.numeric(gsub(",", ".", indiceDesPrix_WE[[2]]))  # Remplace ',' par '.' si nécessaire

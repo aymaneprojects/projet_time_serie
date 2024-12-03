@@ -17,8 +17,8 @@ output: html_document
 
 ```{r}
 library(readr)
-setwd("data")
-indiceDesPrix_WE <- read_csv("IDP_WE_TRI.csv")
+indiceDesPrix_WE <- read_csv("https://raw.githubusercontent.com/aymaneprojects/projet_time_serie/edfac8dd06b1af4a7c0eb0968a6c2b607aa257fd/data/IDP_WE_TRI.csv" , show_col_types = FALSE )
+
 indiceDesPrix_WE[[1]] <- as.Date(indiceDesPrix_WE[[1]], format = "%Y-%m-%d")
 indiceDesPrix_WE[[2]] <- as.numeric(gsub(",", ".", indiceDesPrix_WE[[2]]))  # Remplace ',' par '.' si nécessaire
 indiceDesPrix_WE_filtered <- indiceDesPrix_WE[indiceDesPrix_WE[[1]] >= as.Date("1967-01-01") & indiceDesPrix_WE[[1]] <= as.Date("2019-12-31"), ]
@@ -37,8 +37,7 @@ plot(
 
 ```{r}
 library(readr)
-setwd("C:/Users/33670/Documents/M2 semestre 9/Time series/Projet_Final")
-GDP <- read_csv("GDPC1.csv")
+GDP <- read_csv("https://raw.githubusercontent.com/aymaneprojects/projet_time_serie/edfac8dd06b1af4a7c0eb0968a6c2b607aa257fd/data/GDPC1.csv", show_col_types = FALSE)
 GDP[[1]] <- as.Date(GDP[[1]], format = "%Y-%m-%d")
 GDP[[2]] <- as.numeric(gsub(",", ".", GDP[[2]]))  # Remplace ',' par '.' si nécessaire
 GDP_filtered <- GDP[GDP[[1]] >= as.Date("1967-01-01") & GDP[[1]] <= as.Date("2019-12-31"), ]
@@ -56,8 +55,7 @@ plot(
 
 ```{r}
 library(readr)
-setwd("C:/Users/33670/Documents/M2 semestre 9/Time series/Projet_Final")
-gaz <- read_csv("gaz_TRI.csv")
+gaz <- read_csv("https://raw.githubusercontent.com/aymaneprojects/projet_time_serie/edfac8dd06b1af4a7c0eb0968a6c2b607aa257fd/data/gaz_TRI.csv", show_col_types = FALSE)
 gaz[[1]] <- as.Date(gaz[[1]], format = "%Y-%m-%d")
 gaz[[2]] <- as.numeric(gsub(",", ".", gaz[[2]]))  # Remplace ',' par '.' si nécessaire
 gaz_filtered <- gaz[gaz[[1]] >= as.Date("1967-01-01") & gaz[[1]] <= as.Date("2019-12-31"), ]
@@ -80,8 +78,7 @@ nbre_na<-sum(is.na(gaz_df))
 
 ```{r}
 library(readr)
-setwd("C:/Users/33670/Documents/M2 semestre 9/Time series/Projet_Final")
-essence <- read_csv("essence_TRI.csv")
+essence <- read_csv("https://raw.githubusercontent.com/aymaneprojects/projet_time_serie/edfac8dd06b1af4a7c0eb0968a6c2b607aa257fd/data/essence_TRI.csv", show_col_types = FALSE)
 essence[[1]] <- as.Date(essence[[1]], format = "%Y-%m-%d")
 essence[[2]] <- as.numeric(gsub(",", ".", essence[[2]]))  # Remplace ',' par '.' si besoin
 essence_ts <- ts(essence[[2]], start = c(1967, 1), frequency = 4)
@@ -109,8 +106,7 @@ nbre_na<-sum(is.na(essence_df))
 
 ```{r}
 library(readr)
-setwd("C:/Users/33670/Documents/M2 semestre 9/Time series/Projet_Final")
-Taux_Change <- read_csv("Taux_Change.csv")
+Taux_Change <- read_csv("https://raw.githubusercontent.com/aymaneprojects/projet_time_serie/edfac8dd06b1af4a7c0eb0968a6c2b607aa257fd/data/Taux_Change.csv", show_col_types = FALSE)
 Taux_Change[[1]] <- as.Date(Taux_Change[[1]], format = "%Y-%m-%d")
 Taux_Change[[2]] <- as.numeric(gsub(",", ".", Taux_Change[[2]]))  # Remplace ',' par '.' si besoin
 Taux_Change_filtered <- Taux_Change[Taux_Change[[1]] >= as.Date("1967-01-01") & Taux_Change[[1]] <= as.Date("2019-12-31"), ]
@@ -128,8 +124,7 @@ plot(
 
 ```{r}
 library(readr)
-setwd("C:/Users/33670/Documents/M2 semestre 9/Time series/Projet_Final")
-chomage <- read_csv("chomage_TRI.csv")
+chomage <- read_csv("https://raw.githubusercontent.com/aymaneprojects/projet_time_serie/edfac8dd06b1af4a7c0eb0968a6c2b607aa257fd/data/chomage_TRI.csv", show_col_types = FALSE)
 chomage[[1]] <- as.Date(chomage[[1]], format = "%Y-%m-%d")
 chomage[[2]] <- as.numeric(gsub(",", ".", chomage[[2]]))  # Remplace ',' par '.' si besoin
 chomage_filtered <- chomage[chomage[[1]] >= as.Date("1967-01-01") & chomage[[1]] <= as.Date("2019-12-31"), ]
